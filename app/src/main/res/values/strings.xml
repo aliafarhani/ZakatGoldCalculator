@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ZakatGoldCalculator</string>
+    <string name="result_placeholder">Result</string>
+    <string name="error_weight">Please enter weight</string>
+    <string name="error_value">Please enter gold value</string>
+    <string name="calc_result">Total Gold Value: RM %1$.2f\nZakat Payable Value: RM %2$.2f\nTotal Zakat: RM %3$.2f</string>
+    <string name="share_text">Try my Zakat Gold Calculator App</string>
+    <string name="share_title">Share Zakat App</string>
+    <string name="type_keep">Keep</string>
+    <string name="type_wear">Wear</string>
+    <string name="header_title">Zakat Gold Calculator</string>
+    <string name="info_text">Keep = 85g | Wear = 200g</string>
+    <string name="instruction_text">Instruction: Enter all fields before calculation</string>
+    <string name="hint_weight">Gold Weight (grams)</string>
+    <string name="hint_value">Gold Value per Gram (RM)</string>
+    <string name="btn_calculate">Calculate</string>
+    <string name="btn_reset">Reset</string>
+</resources>

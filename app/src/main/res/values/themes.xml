@@ -1,0 +1,11 @@
+<resources>
+
+    <style name="Theme.ZakatGoldCalculator"
+        parent="Theme.Material3.Light">
+
+        <item name="colorPrimary">#E8F5E9</item>
+        <item name="colorSecondary">#C9B6E4</item>
+
+    </style>
+
+</resources>
