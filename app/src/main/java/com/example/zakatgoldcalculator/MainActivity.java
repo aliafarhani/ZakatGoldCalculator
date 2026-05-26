@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         textResult = findViewById(R.id.textResult);
 
         String[] type = {
+                "Select Gold Type",
                 getString(R.string.type_keep),
                 getString(R.string.type_wear)
         };
@@ -68,12 +69,21 @@ public class MainActivity extends AppCompatActivity {
 
             int uruf;
 
-            if (spinnerType.getSelectedItem().toString()
-                    .equals(getString(R.string.type_keep))) {
+            String selectedType =
+                    spinnerType.getSelectedItem().toString();
+
+            if(selectedType.equals("Select Gold Type")){
+
+                textResult.setText("Please select gold type");
+                return;
+
+            }
+            else if(selectedType.equals(getString(R.string.type_keep))){
 
                 uruf = 85;
 
-            } else {
+            }
+            else{
 
                 uruf = 200;
             }
