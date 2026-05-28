@@ -1,11 +1,20 @@
 <resources>
 
-    <style name="Theme.ZakatGoldCalculator"
-        parent="Theme.Material3.Light">
+<style name="Theme.ZakatGoldCalculator"
+    parent="Theme.Material3.Light">
 
-        <item name="colorPrimary">#E8F5E9</item>
-        <item name="colorSecondary">#C9B6E4</item>
+    <!-- TOP BAR -->
+    <item name="colorPrimary">#1B5E20</item>
 
-    </style>
+    <!-- SECONDARY COLOR -->
+    <item name="colorSecondary">#C9B6E4</item>
+
+    <!-- STATUS BAR -->
+    <item name="android:statusBarColor">#1B5E20</item>
+
+    <!-- BACKGROUND -->
+    <item name="android:windowBackground">#F7F9FA</item>
+
+</style>
 
 </resources>

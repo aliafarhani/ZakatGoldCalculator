@@ -22,7 +22,7 @@ public class AboutActivity extends AppCompatActivity {
 
             Intent intent = new Intent(
                     Intent.ACTION_VIEW,
-                    Uri.parse("https://github.com/aliafarhani/zakat-gold-calculator.git")
+                    Uri.parse("https://github.com/aliafarhani/ZakatGoldCalculator.git")
             );
 
             startActivity(intent);

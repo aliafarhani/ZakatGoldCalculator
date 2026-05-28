@@ -1,37 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E8F5E9">
+    android:background="#F1F8F1">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="20dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="About Developer"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:textColor="#000000"/>
+        <!-- MAIN CARD -->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Name: NUR ALIA FARHANI BINTI MOHAMAD SAIFUL AZMI&#10;Student No: 2024376455&#10;Programme: ICT602&#10;Group: RCDCS2405B"
-            android:textColor="#000000"/>
-
-        <Button
-            android:id="@+id/btnGithub"
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Open GitHub"
-            android:backgroundTint="#81C784"
-            android:layout_marginTop="20dp"/>
+            app:cardCornerRadius="24dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <!-- TITLE -->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="About Developer"
+                    android:textColor="#1B5E20"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"/>
+
+                <!-- NAME -->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:textStyle="bold"
+                    android:textColor="#2E7D32"
+                    android:textSize="18sp"
+                    android:layout_marginTop="24dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NUR ALIA FARHANI BINTI MOHAMAD SAIFUL AZMI"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:layout_marginTop="4dp"/>
+
+                <!-- STUDENT NO -->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Student No"
+                    android:textStyle="bold"
+                    android:textColor="#2E7D32"
+                    android:textSize="18sp"
+                    android:layout_marginTop="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2024376455"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:layout_marginTop="4dp"/>
+
+                <!-- PROGRAMME -->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Programme"
+                    android:textStyle="bold"
+                    android:textColor="#2E7D32"
+                    android:textSize="18sp"
+                    android:layout_marginTop="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ICT602"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:layout_marginTop="4dp"/>
+
+                <!-- GROUP -->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Group"
+                    android:textStyle="bold"
+                    android:textColor="#2E7D32"
+                    android:textSize="18sp"
+                    android:layout_marginTop="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RCDCS2405B"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:layout_marginTop="4dp"/>
+
+                <!-- BUTTON -->
+
+                <Button
+                    android:id="@+id/btnGithub"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Open GitHub"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:backgroundTint="#66BB6A"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 

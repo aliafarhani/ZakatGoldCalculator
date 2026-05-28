@@ -4,10 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     EditText editWeight, editValue;
-    Spinner spinnerType;
+    RadioButton rbKeep, rbWear;
     Button btnCalculate, btnReset;
     TextView textResult;
 
@@ -27,25 +26,16 @@ public class MainActivity extends AppCompatActivity {
 
         editWeight = findViewById(R.id.editWeight);
         editValue = findViewById(R.id.editValue);
-        spinnerType = findViewById(R.id.spinnerType);
+
+        rbKeep = findViewById(R.id.rbKeep);
+        rbWear = findViewById(R.id.rbWear);
+
         btnCalculate = findViewById(R.id.btnCalculate);
         btnReset = findViewById(R.id.btnReset);
+
         textResult = findViewById(R.id.textResult);
 
-        String[] type = {
-                "Select Gold Type",
-                getString(R.string.type_keep),
-                getString(R.string.type_wear)
-        };
-
-        ArrayAdapter<String> adapter =
-                new ArrayAdapter<>(
-                        this,
-                        android.R.layout.simple_spinner_dropdown_item,
-                        type
-                );
-
-        spinnerType.setAdapter(adapter);
+        // CALCULATE BUTTON
 
         btnCalculate.setOnClickListener(v -> {
 
@@ -53,12 +43,14 @@ public class MainActivity extends AppCompatActivity {
             String valueStr = editValue.getText().toString();
 
             if (weightStr.isEmpty()) {
+
                 editWeight.setError(getString(R.string.error_weight));
                 editWeight.requestFocus();
                 return;
             }
 
             if (valueStr.isEmpty()) {
+
                 editValue.setError(getString(R.string.error_value));
                 editValue.requestFocus();
                 return;
@@ -69,28 +61,26 @@ public class MainActivity extends AppCompatActivity {
 
             int uruf;
 
-            String selectedType =
-                    spinnerType.getSelectedItem().toString();
+            // RADIO BUTTON CHECK
 
-            if(selectedType.equals("Select Gold Type")){
+            if (rbKeep.isChecked()) {
+
+                uruf = 85;
+            }
+            else if (rbWear.isChecked()) {
+
+                uruf = 200;
+            }
+            else {
 
                 textResult.setText("Please select gold type");
                 return;
-
-            }
-            else if(selectedType.equals(getString(R.string.type_keep))){
-
-                uruf = 85;
-
-            }
-            else{
-
-                uruf = 200;
             }
 
             double zakatWeight = weight - uruf;
 
             if (zakatWeight < 0) {
+
                 zakatWeight = 0;
             }
 
@@ -109,10 +99,15 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+        // RESET BUTTON
+
         btnReset.setOnClickListener(v -> {
 
             editWeight.setText("");
             editValue.setText("");
+
+            rbKeep.setChecked(false);
+            rbWear.setChecked(false);
 
             textResult.setText(
                     getString(R.string.result_placeholder)
@@ -120,6 +115,8 @@ public class MainActivity extends AppCompatActivity {
 
         });
     }
+
+    // MENU
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -132,10 +129,14 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    // ABOUT & SHARE
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         int id = item.getItemId();
+
+        // ABOUT
 
         if (id == R.id.mnuabout) {
 
@@ -149,6 +150,8 @@ public class MainActivity extends AppCompatActivity {
 
             return true;
         }
+
+        // SHARE
 
         else if (id == R.id.mnushare) {
 
